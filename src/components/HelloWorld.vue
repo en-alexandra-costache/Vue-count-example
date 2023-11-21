@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-const messageText = ref(0);
+import { ref, inject } from "vue";
+const numberFromApp: number = inject("countNumber") ?? 0;
+const messageText = ref(numberFromApp);
 
 const plusPlus = () => {
   messageText.value++;
